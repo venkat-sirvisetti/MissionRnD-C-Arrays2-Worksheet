@@ -13,6 +13,10 @@ ERROR CASES: Return -1 for invalid inputs.
 NOTES:
 */
 
+#include<stddef.h>
 int findSingleOccurenceNumber(int *A, int len) {
+	if (A==NULL||len<0)
 	return -1;
+	
+
 }
