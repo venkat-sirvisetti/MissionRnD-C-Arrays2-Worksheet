@@ -17,6 +17,30 @@ NOTES:
 int findSingleOccurenceNumber(int *A, int len) {
 	if (A==NULL||len<0)
 	return -1;
+	int i = 0, j = 0,index=-1,temp=0;
+	for (i = 0; i < len-1; i++)
+	{
+		index = i+1;
+		for (j = i+1; j < len; j++)
+		{
+			if (A[index]>A[j])
+			{
+				index = j;
+			}
+		}
+		if (A[i]>A[index])
+		{
+			temp = A[index];
+			A[index] = A[i];
+			A[i] = temp;
+		}
+	}
+	for (i = 0; i < len; )
+	{
+		if (A[i] != A[i + 1])
+			return A[i];
+		i = i + 3;
+	}
 	
 
 }
